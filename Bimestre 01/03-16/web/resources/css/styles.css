@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/03/2017, 22:22:57
+    Author     : tunnes
+*/
+form{
+    width: 307px;
+    margin: 20px auto;
+}
+.tabela {
+    margin: 0 auto;
+    font-size: 13px;
+    border: thin solid black;
+    text-transform: uppercase;
+}
+.tabelaHeader {
+    text-align: center;
+    color: Snow;
+    background: Teal;
+    padding: 2px 20px 2px 20px;
+}
+.tabelaCaption {
+    text-align: center;
+    font-style: italic;
+    color: Snow;
+    background: Teal;
+}
+.linhaPar {
+    text-align: left;
+    background: MediumTurquoise;
+}
+.linhaImpar {
+    text-align: left;
+    background: PowderBlue;
+}
