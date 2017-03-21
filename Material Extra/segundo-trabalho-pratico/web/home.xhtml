@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Táxi Aéreo</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Táxi Aéreo</h1>
+            <h:panelGrid class="tabelaDoTeste" columns="2">
+                Nome:
+                <h:inputText id="nome" value="#{reservaBean.reserva.nome}" required="true" requiredMessage="Informe seu nome!"/>
+                CPF:
+                <h:inputText value="#{reservaBean.reserva.documento}" validatorMessage="#{msgs.validaCPF}" required="true" requiredMessage="Informe seu documento!">
+                    <f:validator validatorId="cpfValidator"/>
+                </h:inputText>
+                Data:
+                <h:inputText value="#{reservaBean.reserva.data}" required="true" requiredMessage="Informe a data de saída!">
+                    <f:convertDateTime pattern="MM/yyyy"/>
+                </h:inputText>
+                Destino:
+                <h:selectOneListbox value="#{reservaBean.reserva.destino}" required="true" requiredMessage="Selecione um destino!">
+                    <f:selectItems value="#{reservaBean.listarDestinos()}"/>
+                </h:selectOneListbox>
+                Horário:
+                <h:selectOneRadio value="#{reservaBean.reserva.horario}" required="true" requiredMessage="Selecione um horário!">
+                    <f:selectItem itemValue="H0" itemLabel="06h00"/>
+                    <f:selectItem itemValue="H1" itemLabel="12h00"/>                    
+                </h:selectOneRadio>
+
+            </h:panelGrid>
+            <h:commandButton class="botaoDoidao" action="#{reservaBean.adicionarReserva()}" value='Adicionar'/>
+            <h:commandButton immediate="true" class="botaoDoidao iniciarDoidao" action="#{reservaBean.iniciarConversacao()}" value='Iniciar Período'/>
+            <h:commandButton immediate="true" class="botaoDoidao finalizarDoidao" action="#{reservaBean.finalizarConversacao()}" value='Finalizar Período'/>            
+            <h:commandButton immediate="true" class="botaoDoidao ultimoDoidao" action="/reservas" value='Listar Reservas'/>
+            <!-- O atributo "immediate" força o envio do formulário sem ter o preenchido complemente -->
+        </h:form>
+    </h:body>
+</html>
+
