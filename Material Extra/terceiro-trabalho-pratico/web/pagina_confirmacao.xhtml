@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./_template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="top">
+        <h1>Táxi Aéreo</h1>
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid class="tabelaDoTeste" columns="2">
+                Nome:
+                <h:outputText value="#{reservaBean.reserva.nome}"></h:outputText>
+                CPF:
+                <h:outputText value="#{reservaBean.reserva.documento}"/>
+                Data:
+                <h:outputText value="#{reservaBean.reserva.data}">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:outputText>                   
+                Destino:
+                <h:outputText value="#{reservaBean.reserva.destino}"/>
+                Horário:
+                <h:outputText value='#{reservaBean.reserva.horario == "H0" ? "6h00" : "12h00" }'/>
+                Preço:
+                <h:outputText value="RS #{reservaBean.reserva.preco}"/>            
+            </h:panelGrid>
+            <h:commandButton class="botaoDoidao" action="#{reservaBean.adicionarReserva()}" value="Confirmar"/>
+            <h:commandButton class="botaoDoidao" action="/pagina_edicao" value="Alterar"/>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

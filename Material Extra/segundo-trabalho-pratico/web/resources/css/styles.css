@@ -1,0 +1,126 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ *   
+ * Created on : 01/03/2017, 22:16:14
+ * 
+ * @author tunnes (Ayrton Felipe)
+ * @author gmoraiz (Gabriel Morais)
+ * @author tarcisioLima (Tarcisio Lima)
+ * 
+ */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,900');
+*{  
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif !important; 
+}
+form input[type=text]{
+    width: 98%;
+}
+form{
+    margin: 0px auto;
+    width: 250px;
+}
+form h1{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 35px;
+    background-color: #f9dc46;
+    text-align: center;
+    padding: 8px;
+    color: black;
+    border-bottom: 0px !important;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    border-top-left-radius: 25px;
+}
+form select{
+    width: 100%;
+}
+.tabelaDoTeste{
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 300;
+    border: 1px solid black;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+.botaoDoidao {
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 5px;
+    border-radius: 0px;
+    background-color: #f9dc46;
+    border: 1px solid black;
+    color: black;
+}
+.ultimoDoidao{
+    border-bottom-right-radius: 25px;    
+}
+.finalizarDoidao {
+    font-size: 11px;
+    display: inline-block;
+    width: 48%;
+    margin-left: 1%;
+}
+.iniciarDoidao{
+    display: inline-block;
+    width: 50%;
+    margin-right: 1%;
+    font-size: 11px;
+}
+.reservaDoidao{
+
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+#javax_faces_developmentstage_messages{
+    padding: 0 auto;
+    width: 290px;
+    margin: 0 auto;
+}
+/* tabela */
+.reservaForm{
+    width: 600px;
+}
+.tabela {
+    width: 600px;
+    margin: 0 auto;
+    font-size: 13px;
+    border: thin solid black;
+    text-transform: uppercase;
+}
+.tabelaHeader {
+    text-align: center;
+    color: Snow;
+    background: #ff7600;
+    padding: 2px 20px !important;  
+   
+}
+.tabelaCaption {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 35px;
+    background-color: #f9dc46;
+    text-align: center;
+    padding: 8px;
+    color: black;
+    border-bottom: 0px !important;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.linhaPar {
+    text-align: left;
+    background: #ffcd81;
+}
+.linhaImpar {
+    text-align: left;
+    background: #ffbb54;
+}

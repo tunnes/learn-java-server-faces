@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        <h:dataTable 
+            value="#{reservaBean.reservas}" 
+            var="reserva"
+            styleClass="tabela" 
+            captionClass="tabelaCaption" 
+            headerClass="tabelaHeader"
+            rowClasses="linhaPar, linhaImpar">
+
+            <f:facet name="caption">Reservas</f:facet>
+            <h:column>
+                <f:facet name="header">Nome</f:facet>
+                <h:outputText value="#{reserva.nome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">CPF</f:facet>
+                <h:outputText value="#{reserva.documento}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Data</f:facet>
+                <h:outputText value="#{reserva.data}">
+                    <f:convertDateTime pattern="MM/YYYY"/>
+                </h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Destino</f:facet>
+                <h:outputText value="#{reserva.destino}"/>                
+            </h:column>
+            <h:column>
+                <f:facet name="header">Horário</f:facet>
+                <h:outputText value='#{reserva.horario == "H0" ? "6h00" : "12h00" }'/>                
+            </h:column>
+            <h:column>
+                <f:facet name="header">Preço</f:facet>
+                <h:outputText value="RS #{reserva.preco}"/>
+            </h:column>            
+            <f:facet name="footer"></f:facet>
+        </h:dataTable>
+        <h:form class="reservaForm">
+            <h:commandButton class="botaoDoidao reservaDoidao" value="RETORNAR" action="/home" />
+        </h:form>
+    </h:body>
+</html>
